@@ -34,53 +34,53 @@ public class ConcurrentModification {
         numbers.add(1);
         numbers.add(10);
         numbers.add(18);
-//
-//        Iterator<Integer> itr = numbers.iterator();
-//        numbers.add(20);
-//        System.out.println(itr.next());
-//        System.out.println(itr.next());
-//        itr.remove();
-//        System.out.println(numbers);
+
+        Iterator<Integer> itr = numbers.iterator();
+        numbers.add(20);
+        System.out.println(itr.next());
+        System.out.println(itr.next());
+        itr.remove();
+        System.out.println(numbers);
 
         ArrayList<Integer> list = new ArrayList<>();
         list.add(23);
         list.add(26);
         list.add(68);
-//        for (Integer n : list) {
-//            list.remove(2);
-//        }
+        for (Integer n : list) {
+            list.remove(2);
+        }
 
 //        * * * Normal Indexing * * *
-//        for (int i = 0; i < 5; i++) {
-//            list.add(12+i);
-//            list.remove(0);
-//        }
-//        System.out.println(list);
-
-//         * * *  Infinite Loops * * *
-        ArrayList<Integer> arr2 = new ArrayList<>();
-//        arr2.add(1);
-//        for (int i = 0; i < arr2.size(); i++) {
-//            arr2.add(i);
-//            System.out.println(arr2.get(i));
-//        }
-//        System.out.println(list);
-
-
-        Iterator<Integer> itr = list.iterator();
-        while (itr.hasNext()) {
-            if (itr.next()==26)
-                itr.remove();
+        for (int i = 0; i < 5; i++) {
+            list.add(12+i);
+            list.remove(0);
         }
         System.out.println(list);
 
-//        ArrayList<Integer> arr = new ArrayList<>();
-//        arr.add(12);
-//        arr.add(13);
-//        arr.add(135);
-//        for (int i: arr) {
-//            arr.remove(1);
-//        }
+//         * * *  Infinite Loops * * *
+        ArrayList<Integer> arr2 = new ArrayList<>();
+        arr2.add(1);
+        for (int i = 0; i < arr2.size(); i++) {
+            arr2.add(i);
+            System.out.println(arr2.get(i));
+        }
+        System.out.println(list);
+
+
+        Iterator<Integer> itr2 = list.iterator();
+        while (itr2.hasNext()) {
+            if (itr2.next()==26)
+                itr2.remove();
+        }
+        System.out.println(list);
+
+        ArrayList<Integer> arr = new ArrayList<>();
+        arr.add(12);
+        arr.add(13);
+        arr.add(135);
+        for (int i: arr) {
+            arr.remove(1);
+        }
 
         arr2.add(1);
         ListIterator<Integer> listItr = arr2.listIterator();
