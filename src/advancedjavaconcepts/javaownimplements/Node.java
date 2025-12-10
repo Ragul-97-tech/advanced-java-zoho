@@ -1,16 +1,17 @@
 package advancedjavaconcepts.javaownimplements;
 
-import static advancedjavaconcepts.javaownimplements.Color.RED;
-import static advancedjavaconcepts.javaownimplements.Color.BLACK;
+import static advancedjavaconcepts.javaownimplements.Colorful.RED;
+import static advancedjavaconcepts.javaownimplements.Colorful.BLACK;
+import static advancedjavaconcepts.javaownimplements.Colorful.RESET;
 
 public class Node<T extends Comparable<T>> {
     private T data;
+    private Color color = Color.RED;
+    private String colorful = RED;
 
     Node(T data) {
         this.data = data;
     }
-
-    private String color = RED;
 
     private Node<T> leftChild, rightChild, parent;
 
@@ -43,23 +44,25 @@ public class Node<T extends Comparable<T>> {
     }
 
     public void flipColor() {
-        this.color = this.color == RED ? BLACK : RED;
+        this.colorful = this.color.name().equalsIgnoreCase("black") ? RED : BLACK;
+        this.color = this.color == Color.RED ? Color.BLACK : Color.RED;
     }
 
     public T getData() {
         return data;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
 
-    public void setColor(String color) {
+    public void setColor(Color color) {
         this.color = color;
+        this.colorful = color.name().equalsIgnoreCase("black") ? BLACK : RED;
     }
 
     @Override
     public String toString() {
-        return "Value: " + data;
+        return "Value: " + colorful + data + RESET;
     }
 }

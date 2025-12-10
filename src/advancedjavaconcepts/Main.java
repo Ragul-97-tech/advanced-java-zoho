@@ -53,7 +53,7 @@ public class Main {
 //            System.out.println(arr2.get(i));
 //        }
         TreeSet<Integer> ts = new TreeSet<>();
-        ts.add(12);
+        System.out.println(ts.add(12));
         ts.add(78);
         ts.add(17);
         ts.add(1);
@@ -61,18 +61,17 @@ public class Main {
         ts.add(34);
         System.out.println(ts.remove(34));
         System.out.println(ts.contains(34));
-        System.out.println(ts.first());
-        System.out.println(ts.last());
-        System.out.println(ts.higher(89));
-        System.out.println(ts.lower(7));
-        System.out.println(ts.pollFirst());
-        System.out.println(ts.pollLast());
+//        System.out.println(ts.first());
+//        System.out.println(ts.last());
+//        System.out.println(ts.higher(89));
+//        System.out.println(ts.lower(7));
+//        System.out.println(ts.pollFirst());
+//        System.out.println(ts.pollLast());
 //        System.out.println(ts.ceiling(17));
-        System.out.println(Arrays.toString(ts.toArray()));
+//        System.out.println(Arrays.toString(ts.toArray()));
 //        Iterator<Integer> itr = ts.iterator();
 
-        System.out.println(ts.toString());
-
+//        System.out.println(ts.toString());
 
     }
 }
