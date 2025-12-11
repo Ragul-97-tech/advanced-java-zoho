@@ -15,6 +15,18 @@ class Employee {
     public String toString() {
         return "\nEmployee Id: " + empId + "\nEmployee Name: " + empName;
     }
+
+    public boolean equals(Object obj) {
+        if (this ==  obj) return true;
+        if (!(obj instanceof Employee)) return false;
+        Employee emp = (Employee) obj;
+        return this.empId == emp.empId;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.empId);
+    }
 }
 
 class Project {
@@ -42,19 +54,22 @@ public class EmployeeManagementMap {
 
         emp1Projects.add(pro1);
         emp2Projects.add(pro2);
+        emp1Projects.add(pro3);
         Employee emp1 = new Employee("John", 12853);
         Employee emp2 = new Employee("Leon", 12098);
+        Employee emp3 = new Employee("Archers", 12098);
 
         HashMap<Employee, List<Project>> hm = new HashMap<>();
         hm.put(emp1, emp1Projects);
         hm.put(emp2, emp2Projects);
+        hm.put(emp3, emp1Projects);
         System.out.println(hm);
 
         emp1Projects.add(pro2);
         hm.put(emp1, emp1Projects);
         System.out.println(hm);
 
-        emp1Projects.remove(1);
+        emp1Projects.remove(0);
         System.out.println(hm);
 
         Iterator<Map.Entry<Employee, List<Project>>> pairs = hm.entrySet().iterator();
@@ -66,5 +81,6 @@ public class EmployeeManagementMap {
 //            System.out.println(e);
 //            System.out.println(list);
 //        }
+        System.out.println(hm);
     }
 }

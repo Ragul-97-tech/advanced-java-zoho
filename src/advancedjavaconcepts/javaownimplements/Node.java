@@ -63,6 +63,6 @@ public class Node<T extends Comparable<T>> {
 
     @Override
     public String toString() {
-        return "Value: " + colorful + data + RESET;
+        return colorful + data + RESET;
     }
 }
