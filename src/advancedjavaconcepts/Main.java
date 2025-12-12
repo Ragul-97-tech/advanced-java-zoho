@@ -51,16 +51,16 @@ public class Main {
 //        for (int i = 0; i < arr2.size(); i++) {
 //            arr2.add(i);
 //            System.out.println(arr2.get(i));
-//        }
-        TreeSet<Integer> ts = new TreeSet<>();
-        System.out.println(ts.add(12));
-        ts.add(78);
-        ts.add(17);
-        ts.add(1);
-        ts.add(89);
-        ts.add(34);
-        System.out.println(ts.remove(34));
-        System.out.println(ts.contains(34));
+////        }
+//        TreeSet<Integer> ts = new TreeSet<>();
+//        System.out.println(ts.add(12));
+//        ts.add(78);
+//        ts.add(17);
+//        ts.add(1);
+//        ts.add(89);
+//        ts.add(34);
+//        System.out.println(ts.remove(34));
+//        System.out.println(ts.contains(34));
 //        System.out.println(ts.first());
 //        System.out.println(ts.last());
 //        System.out.println(ts.higher(89));

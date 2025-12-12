@@ -9,7 +9,7 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
 //        40, 20, 60, 35, 10, 30, 50, 70, 25, 65, 15
     @Override
     public Tree<T> insert(T data) {
-        if (searchElement(root, data) == null) {
+        if (searchElement(root, data) != null) {
             return this;
         }
         size++;
@@ -249,7 +249,7 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
                 Node<T> sibling = parentNode.getLeftChild();
 
                 // case 1: siblings is red
-                if (sibling != sibling && sibling.getColor() == Color.RED) {
+                if (sibling != null && sibling.getColor() == Color.RED) {
                     sibling.setColor(Color.BLACK);
                     parentNode.setColor(Color.RED);
                     rotateRight(parentNode);

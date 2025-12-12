@@ -27,7 +27,7 @@ public class OwnTreeSet {
 //
 //        System.out.println(rbt.isEmpty());
 //        System.out.println();
-//        rbt.traverse();
+        rbt.traverse();
 //        System.out.println("Min: " + rbt.getMin());
 //        System.out.println("Max: " + rbt.getMax());
 //        System.out.println("Size: " + rbt.size());
@@ -63,18 +63,18 @@ public class OwnTreeSet {
 //        rbt.remove(10);
 //        rbt.remove(40);
 
-//        rbt.insert(50);
-//        rbt.insert(25);
-//        rbt.insert(75);
-//        rbt.insert(12);
-//        rbt.insert(37);
-//        rbt.insert(62);
-//        rbt.insert(87);
-//        rbt.insert(6);
-//        rbt.insert(18);
-//
-//        rbt.remove(6);
-//        rbt.remove(75);
+        rbt.insert(50);
+        rbt.insert(25);
+        rbt.insert(75);
+        rbt.insert(12);
+        rbt.insert(37);
+        rbt.insert(62);
+        rbt.insert(87);
+        rbt.insert(6);
+        rbt.insert(18);
+
+        rbt.remove(6);
+        rbt.remove(87);
 
 //        rbt.insert(10);
 //        rbt.insert(20);
@@ -101,19 +101,19 @@ public class OwnTreeSet {
 //        rbt.remove(25);
 //        rbt.remove(150);
 
-        rbt.insert(20);
-        rbt.insert(10);
-        rbt.insert(30);
-        rbt.insert(5);
-        rbt.insert(15);
-        rbt.insert(25);
-        rbt.insert(35);
-        rbt.insert(27);
-        rbt.insert(33);
-
-        rbt.remove(5);
-        rbt.remove(27);
-
+//        rbt.insert(20);
+//        rbt.insert(10);
+//        rbt.insert(30);
+//        rbt.insert(5);
+//        rbt.insert(15);
+//        rbt.insert(25);
+//        rbt.insert(35);
+//        rbt.insert(27);
+//        rbt.insert(33);
+//
+//        rbt.remove(5);
+//        rbt.remove(27);
+//
         rbt.traverse();
     }
 }

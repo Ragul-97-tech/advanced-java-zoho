@@ -17,7 +17,7 @@ class Employee {
     }
 
     public boolean equals(Object obj) {
-        if (this ==  obj) return true;
+        if (this == obj) return true;
         if (!(obj instanceof Employee)) return false;
         Employee emp = (Employee) obj;
         return this.empId == emp.empId;
