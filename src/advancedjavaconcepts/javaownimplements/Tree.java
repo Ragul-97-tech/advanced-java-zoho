@@ -1,9 +1,7 @@
 package advancedjavaconcepts.javaownimplements;
 
-public interface Tree <T extends Comparable<T>> {
-    Tree<T> insert(T data);
-
-//    boolean remove(T data);
+public interface Tree <T extends Comparable<T>> extends iterator<T> {
+    boolean insert(T data);
 
     boolean remove(T data);
 
@@ -14,6 +12,8 @@ public interface Tree <T extends Comparable<T>> {
     T getMin();
 
     boolean isEmpty();
+
+    boolean contains(T node);
 
     void traverse();
 }

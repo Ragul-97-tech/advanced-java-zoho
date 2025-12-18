@@ -2,22 +2,20 @@ package advancedjavaconcepts.javaownimplements;
 
 import java.util.Objects;
 
-public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
+public class RedBlackTree<T extends Comparable<T>> implements Tree<T>, iterator<T> {
     private Node<T> root;
     private int size;
 
-//        40, 20, 60, 35, 10, 30, 50, 70, 25, 65, 15
     @Override
-    public Tree<T> insert(T data) {
+    public boolean insert(T data) {
         if (searchElement(root, data) != null) {
-            return this;
+            return false;
         }
         size++;
         Node<T> node = new Node<>(data);
-        Node<T> oldRoot = root;
         root = insert(root, node);
         satisfyingInsertRules(node);
-        return this;
+        return true;
     }
 
     private Node<T> insert(Node<T> node, Node<T> nodeToInsert) {
@@ -363,5 +361,22 @@ public class RedBlackTree<T extends Comparable<T>> implements Tree<T> {
     @Override
     public boolean isEmpty() {
         return root == null;
+    }
+
+    public boolean contains(T node) {
+        if (searchElement(root, node) != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public T next() {
+        return null;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return false;
     }
 }

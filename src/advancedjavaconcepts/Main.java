@@ -52,7 +52,7 @@ public class Main {
 //            arr2.add(i);
 //            System.out.println(arr2.get(i));
 ////        }
-//        TreeSet<Integer> ts = new TreeSet<>();
+        TreeSet<Integer> ts = new TreeSet<>();
 //        System.out.println(ts.add(12));
 //        ts.add(78);
 //        ts.add(17);
@@ -69,7 +69,7 @@ public class Main {
 //        System.out.println(ts.pollLast());
 //        System.out.println(ts.ceiling(17));
 //        System.out.println(Arrays.toString(ts.toArray()));
-//        Iterator<Integer> itr = ts.iterator();
+        Iterator<Integer> itr = ts.iterator();
 
 //        System.out.println(ts.toString());
 
