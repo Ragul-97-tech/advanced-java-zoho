@@ -22,6 +22,7 @@ public class ColorCode {
     public static final String MAGENTA = "\u001B[95m";
     public static final String CYAN = "\u001B[96m";
     public static final String WHITE = "\u001B[97m";
+    public static final String ORANGE = rgb(242, 100, 25);
 
     //== RGB Direct ==
     public static String rgb(int r,int g,int b) {

@@ -42,11 +42,10 @@ public class LibraryAllocation {
         LibraryDesk libraryDesk = null;
         Student student = null;
         System.out.println(ColorCode.boxDouble("   Welcome to Library Books Sale   "));
-        final int[] counter = {5};
         Thread thread = new Thread(() -> {
             try {
                 for (int i = 5; i > 0; i--) {
-                    System.out.print("\rSale Starts in "+ --counter[0]);
+                    System.out.print("\rSale Starts in "+ i);
                     Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
