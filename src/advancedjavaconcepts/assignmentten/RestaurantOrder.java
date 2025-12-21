@@ -30,7 +30,7 @@ class Order implements Runnable {
     public void run() {
         System.out.println(String.format("Chef [%s] preparing Order [%s]",Thread.currentThread().getName(),orderId));
         Thread cooking = new Thread(() -> {
-            for (int i = 0; i < 2; i++) {
+            for (int i = 0; i < 10; i++) {
                 System.out.print(ColorCode.colored("red","\rCooking " + "\uD83D\uDD25".repeat(i%4)));
                 try {
                     Thread.sleep(500);
