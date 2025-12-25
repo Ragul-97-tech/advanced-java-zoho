@@ -20,7 +20,6 @@ public class RestaurantOrder {
 class Order implements Runnable {
     String orderId;
     static int id = 1;
-    Chef chef;
 
     Order() {
         this.orderId = String.format("Order%03d",id++);
@@ -30,7 +29,7 @@ class Order implements Runnable {
     public void run() {
         System.out.println(String.format("Chef [%s] preparing Order [%s]",Thread.currentThread().getName(),orderId));
         Thread cooking = new Thread(() -> {
-            for (int i = 0; i < 10; i++) {
+            for (int i = 0; i < 9; i++) {
                 System.out.print(ColorCode.colored("red","\rCooking " + "\uD83D\uDD25".repeat(i%4)));
                 try {
                     Thread.sleep(500);
@@ -46,13 +45,5 @@ class Order implements Runnable {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
-}
-
-class Chef {
-    String chefName;
-
-    Chef(String chefName) {
-        this.chefName = chefName;
     }
 }

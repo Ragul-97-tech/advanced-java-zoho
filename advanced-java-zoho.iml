@@ -36,5 +36,18 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="file://$USER_HOME$/Documents/Selenium Package" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="file://$USER_HOME$/Documents/Selenium Package" />
+        </SOURCES>
+        <jarDirectory url="file://$USER_HOME$/Documents/Selenium Package" recursive="false" />
+        <jarDirectory url="file://$USER_HOME$/Documents/Selenium Package" recursive="false" type="SOURCES" />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -1,10 +1,12 @@
 package advancedjavaconcepts.assignmentten;
 
-class BankAccount {
-    double balanceAccount;
+import advancedjavaconcepts.ColorCode;
 
-    BankAccount(double balanceAccount) {
-        this.balanceAccount = balanceAccount;
+class BankAccount {
+    double initalBalance;
+
+    BankAccount(double initalBalance) {
+        this.initalBalance = initalBalance;
     }
 }
 
@@ -20,12 +22,12 @@ class Transaction implements Runnable {
     @Override
     public void run() {
         synchronized (account) {
-            if (transactionAmount > 0 && transactionAmount <= account.balanceAccount) {
+            if (transactionAmount > 0 && transactionAmount <= account.initalBalance) {
                 Thread thread = new Thread(() -> {
-                    for (int i = 0; i < 5; i++) {
-                        System.out.print("\rTimer: " + i);
+                    for (int i = 0; i < 9; i++) {
+                        System.out.print(ColorCode.colored("yellow","\rTransfering" + ".".repeat(i%4)));
                         try {
-                            Thread.sleep(1000);
+                            Thread.sleep(500);
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
@@ -38,8 +40,9 @@ class Transaction implements Runnable {
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
-                account.balanceAccount -= transactionAmount;
-                System.out.println("Current Balance: " + account.balanceAccount);
+                account.initalBalance -= transactionAmount;
+                System.out.println(ColorCode.right("Payment Successfull!"));
+                System.out.println("Current Balance: " + account.initalBalance);
             }
         }
     }
@@ -50,7 +53,7 @@ public class ATMCashWithdrawal {
         BankAccount jointAccount = new BankAccount(5000);
         Thread t1 = new Thread(new Transaction(jointAccount,3000));
         t1.setName(""+(char)(Math.random()));
-        Thread t2 = new Thread(new Transaction(jointAccount,4000));
+        Thread t2 = new Thread(new Transaction(jointAccount,2000));
         t1.start();
         t2.start();
     }
